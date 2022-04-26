@@ -1,7 +1,12 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: echo 'init script' # runs during prebuild
-    command: echo 'start script'
+  - name: Terminal 1
+    init: echo 'start mysql-server' # runs during prebuild
+    command: echo 'start mysql-server'
+
+  - name: Terminal 2
+    init: echo 'select database'
+    command: sudo mysql -u root
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
